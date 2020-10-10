@@ -300,14 +300,14 @@ levels(rsh_df$var) <- c("Degree","Clustering","Path-Lengh","Efficiency")
 rsh_df$AIC <- factor(rsh_df$AIC)
 levels(rsh_df$AIC) <- mod_labs[as.integer(levels(rsh_df$AIC))]
 # Plot best AIC
-(ggAIC <- ggplot(data=rsh_df, aes(x=var, y=cost)) + 
+ggAIC <- ggplot(data=rsh_df, aes(x=var, y=cost)) + 
     stat_identity(aes(color=AIC, size=size)) +
     labs(color = "Model", size = "Significance") +
     ylab("Connectivity density (proportion)") + xlab("") +
     ggtitle("Lower Akaike Information Criterion (AIC)") + coord_flip()  + 
     scale_color_brewer(palette = "Dark2") +
     theme_light()
-)
+show(ggAIC)
 # Significance: p > 0.05 (1); p < 0.05 (1.5); pFDR < 0.05 (3)
 
 # Save plot

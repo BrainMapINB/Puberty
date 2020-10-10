@@ -25,7 +25,7 @@ info$PDSe[which(is.na(info$PDS))] <- predict.gam(fit$gam, newdata = info[which(i
 
 # Plot PSD vs Age
 if(require(ggplot2)==0) install.packages("ggplot2"); library(ggplot2)
-ggplot(data = info, mapping = aes(x = Age)) + 
+g1 <- ggplot(data = info, mapping = aes(x = Age)) + 
     geom_line(aes(y = PDSe, group = BIDS.ID, color = Sex), size=.25) + 
     geom_point(aes(y = PDSe, color = Sex)) + 
     geom_ribbon(data = info[!is.na(info$PDS_pred),], 
@@ -39,3 +39,4 @@ ggplot(data = info, mapping = aes(x = Age)) +
     xlab("Age (years)") +
     ylab("PDS") +
     ggtitle("Pubertal Development Scale")
+show(g1)
