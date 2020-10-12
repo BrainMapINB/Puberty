@@ -204,10 +204,10 @@ if(0){
 #-------------------------------------------------------------------------
 # Figures
 
-# Load 'tidyverse' package
-if(!require(tidyverse)) install.packages("tidyverse"); library(tidyverse)
-# Load 'gridExtra' package
+# Load 'ggplot2', 'gridExtra', & 'viridis' package
+if(!require(ggplot2)) install.packages("ggplot2"); library(ggplot2)
 if(!require(gridExtra)) install.packages("gridExtra"); library(gridExtra)
+if(!require(viridis)) install.packages("viridis"); library(viridis)
 
 # Hexbin chart (NO GSR)
 edge_dist <- read.csv(qc_files[2])
