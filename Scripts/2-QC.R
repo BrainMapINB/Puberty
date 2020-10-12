@@ -204,10 +204,10 @@ if(0){
 #-------------------------------------------------------------------------
 # Figures
 
-# Load 'ggplot2', 'gridExtra', & 'viridis' package
+# Load 'ggplot2', 'gridExtra', & 'hexbin' package
 if(!require(ggplot2)) install.packages("ggplot2"); library(ggplot2)
 if(!require(gridExtra)) install.packages("gridExtra"); library(gridExtra)
-if(!require(viridis)) install.packages("viridis"); library(viridis)
+if(!require(hexbin)) install.packages("hexbin"); library(hexbin)
 
 # Hexbin chart (NO GSR)
 edge_dist <- read.csv(qc_files[2])
